@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema Gestor - Comerciantes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+    integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body class="bg-dark">
+  <div class="header">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">CRUD</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="">
+    <div class="m-4 p-5 rounded shadow-lg bg-body-tertiary bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="text-center pb-2">Comerciantes</h3>
+            <hr class="border border-secondary border-2 opacity-50" />
+            <div class="table-responsive my-custom-scrollbar table-wrapper-scroll-y">
+              <table class="table table-sm table-striped table-hover table-bordered table-warning text-center">
+                <thead>
+                  <tr>
+                    <th scope="row">Id</th>
+                    <th>Tipo de Identificación</th>
+                    <th>Identificación</th>
+                    <th>Apellidos</th>
+                    <th>Nombres</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th>Edad</th>
+                    <th>Ciudad de Origen</th>
+                    <th>Telefono Fijo</th>
+                    <th>Telefono Celular</th>
+                    <th>Direccion</th>
+                    <th>Ciudad</th>
+                    <th>Provincia</th>
+                    <th>Correo</th>
+                    <th colspan="2">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody id="table">
+
+                </tbody>
+              </table>
+            </div>
+            <div class="text-end pt-4">
+              <button type="button" class="btn btn-success end text-center" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">
+                Agregar Comerciante
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">
+            Agregar Comerciante
+          </h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="http://localhost:3000/api/v1/projects/" id="formulario">
+            <div class="mb-3">
+              <label for="tip_ide_id" class="form-label">Tipo de Identificación:
+              </label>
+              <input type="text" class="form-control" id="tip_ide_id" name="tip_ide_id" />
+            </div>
+            <div class="mb-3">
+              <label for="com_cedula_ruc" class="form-label">Cedula o Ruc:
+              </label>
+              <input type="text" class="form-control" id="com_cedula_ruc" name="com_cedula_ruc" />
+            </div>
+            <div class="mb-3">
+              <label for="com_apellidos_razon_social" class="form-label">Apellidos:
+              </label>
+              <input type="text" class="form-control" id="com_apellidos_razon_social"
+                name="com_apellidos_razon_social" />
+            </div>
+            <div class="mb-3">
+              <label for="com_nombres_representante_legal" class="form-label">Nombres:
+              </label>
+              <input type="text" class="form-control" id="com_nombres_representante_legal"
+                name="com_nombres_representante_legal" />
+            </div>
+            <div class="mb-3">
+              <label for="com_fecha_nacimiento" class="form-label">Fecha de Nacimiento:
+              </label>
+              <input type="text" class="form-control" id="com_fecha_nacimiento" name="com_fecha_nacimiento" />
+            </div>
+            <div class="mb-3">
+              <label for="com_edad" class="form-label">Edad: </label>
+              <input type="text" class="form-control" id="com_edad" name="com_edad" />
+            </div>
+            <div class="mb-3">
+              <label for="com_lugar_origen" class="form-label">Lugar de Origen:
+              </label>
+              <input type="text" class="form-control" id="com_lugar_origen" name="com_lugar_origen" />
+            </div>
+            <div class="mb-3">
+              <label for="com_telefono_convencional" class="form-label">Telefono Convencional:
+              </label>
+              <input type="text" class="form-control" id="com_telefono_convencional" name="com_telefono_convencional" />
+            </div>
+            <div class="mb-3">
+              <label for="com_telefono_celular" class="form-label">Telefono Celular:
+              </label>
+              <input type="text" class="form-control" id="com_telefono_celular" name="com_telefono_celular" />
+            </div>
+            <div class="mb-3">
+              <label for="com_direccion_domicilio" class="form-label">Dirección Domicilio:
+              </label>
+              <input type="text" class="form-control" id="com_direccion_domicilio" name="com_direccion_domicilio" />
+            </div>
+            <div class="mb-3">
+              <label for="com_ciudad" class="form-label">Ciudad: </label>
+              <input type="text" class="form-control" id="com_ciudad" name="com_ciudad" />
+            </div>
+            <div class="mb-3">
+              <label for="com_provincia" class="form-label">Provincia:
+              </label>
+              <input type="text" class="form-control" id="com_provincia" name="com_provincia" />
+            </div>
+            <div class="mb-3">
+              <label for="com_mail" class="form-label">Email: </label>
+              <input type="text" class="form-control" id="com_mail" name="com_mail" />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Add</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div id="edicion">
+
+  </div>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
